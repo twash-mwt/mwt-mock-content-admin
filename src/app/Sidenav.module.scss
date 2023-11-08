@@ -1,0 +1,13 @@
+.sidenav {
+    background-color: white;
+    color: black;
+    height: 100vh;
+    display: flex;
+    justify-content: start;
+    align-items: stretch;
+    padding: 32px;
+
+    @media (max-width: 639px) {
+        display: none;
+    }
+}
