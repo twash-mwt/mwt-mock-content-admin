@@ -3,11 +3,25 @@
     color: black;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: start;
     align-items: stretch;
     padding: 32px;
 
     @media (max-width: 639px) {
         display: none;
+    }
+}
+
+.navItems {
+    padding-top:24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    button {
+        width: 100px;
+        height: 100px;
+        margin: auto;
     }
 }

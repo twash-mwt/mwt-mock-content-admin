@@ -1,12 +1,14 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    experimental: {
-      typedRoutes: true,
-    },
-    webpack: (config) => {
-      config.resolve.fallback = { fs: false };
-      return config;
-    }
-}
+const withBuilderDevTools = require("@builder.io/dev-tools/next")();
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = withBuilderDevTools({
+  experimental: {
+    typedRoutes: true,
+  },
+  webpack: (config) => {
+    config.resolve.fallback = { fs: false };
+    return config;
+  },
+});
+
+module.exports = nextConfig;
