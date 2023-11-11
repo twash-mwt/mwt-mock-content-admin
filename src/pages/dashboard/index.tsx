@@ -101,7 +101,7 @@ const Page: NextPageWithLayout = () => {
                 </div>
                 {/** placeholder below to show working */}
                 <div>
-                    {activePage.components.map((c:PageComponent) => <div>{c.name}</div>)}
+                    {activePage.components.map((c:PageComponent, index) => <div key={index}>{c.name}</div>)}
                 </div>
             </div> }
         { showAvailableComponents && <AvailableComponents /> }
