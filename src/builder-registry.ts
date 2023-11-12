@@ -1,6 +1,6 @@
 "use client";
 import { Builder, withChildren } from "@builder.io/react";
-import { Button, ButtonProps, ButtonSize, ButtonKind } from 'mwt-components-react';
+import { Button, ButtonSize, ButtonKind, ImageCarousel } from 'mwt-components-react';
 
 Builder.registerComponent(withChildren(Button), {
   name: "Button",
@@ -38,3 +38,46 @@ Builder.registerComponent(withChildren(Button), {
     }
   ]
 });
+
+Builder.registerComponent(ImageCarousel, {
+  name: "Image Carousel",
+  inputs: [
+    {
+      name: "carouselItems",
+      type: "list",
+      defaultValue: [],
+      subFields: [
+        {
+          name: "imgSrc",
+          type: "file",
+          allowedFileTypes: ['jpeg', 'jpg', 'png', 'svg'],
+        },
+        {
+          name:"link",
+          type: "string"
+        },
+        {
+          name:"target",
+          type: "string",
+          enum: ["_blank", "_self"],
+          friendlyName: "_blank = New Tab, _self = Same Window"
+        },
+        {
+          name:"width",
+          type: "number",
+          defaultValue: 200,
+        },
+        {
+          name:"height",
+          type: "number",
+          defaultValue: 300,
+        },
+
+      ]
+    },
+    {
+      name: "itemsPerPage",
+      type: "number",
+    }
+  ]
+})
